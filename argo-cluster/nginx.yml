@@ -5,7 +5,7 @@ metadata:
   namespace: argocd   # Namespace where the ArgoCD Application resides
 spec:
   destination:
-    namespace: default   # Namespace where the Nginx deployment will be created
+    namespace: argocd   # Namespace where the Nginx deployment will be created
     server: 'https://kubernetes.default.svc'   # Kubernetes API server
   project: default   # The name of the ArgoCD project
   source:
