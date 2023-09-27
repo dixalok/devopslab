@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+  namespace: argocd   # Namespace where the ArgoCD Application resides
+spec:
+  destination:
+    namespace: argocd   # Namespace where the Nginx deployment will be created
+    server: 'https://kubernetes.default.svc'   # Kubernetes API server
+  project: default   # The name of the ArgoCD project
+  source:
+    repoURL: git@github.com:dixalok/devopslab.git   # URL of your Git repository
+    path: manifest   # Path within the repository where your Kubernetes manifests are stored
+    targetRevision: HEAD   # The Git branch, tag, or commit you want to deploy
+  syncPolicy:
+    automated:
+      prune: true   # Automatically delete resources that are not defined in your Git repository
