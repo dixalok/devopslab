@@ -10,7 +10,7 @@ spec:
   project: default   # The name of the ArgoCD project
   source:
     repoURL: git@github.com:dixalok/devopslab.git   # URL of your Git repository
-    path: nginx   # Path within the repository where your Kubernetes manifests are stored
+    path: manifest   # Path within the repository where your Kubernetes manifests are stored
     targetRevision: HEAD   # The Git branch, tag, or commit you want to deploy
   syncPolicy:
     automated:
